@@ -1,0 +1,7 @@
+{
+  "name": "gestiondestock",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
