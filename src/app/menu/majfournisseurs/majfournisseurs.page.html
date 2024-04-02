@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Modifier ou Supprimer un fournisseur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="form-container">
+    <ion-item>
+      <ion-input type="text" name="name" placeholder="Nom du fournisseur" [(ngModel)]="fournisseur.name" required></ion-input>
+      <ion-icon name="person" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" name="address" placeholder="Adresse" [(ngModel)]="fournisseur.address" required></ion-input>
+      <ion-icon name="location" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="email" name="email" placeholder="Email" [(ngModel)]="fournisseur.email" required></ion-input>
+      <ion-icon name="mail" slot="start"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="tel" name="phone" placeholder="Téléphone" [(ngModel)]="fournisseur.phone" required></ion-input>
+      <ion-icon name="call" slot="start"></ion-icon>
+    </ion-item>
+    <ion-button expand="block" (click)="updateFournisseur()">Modifier</ion-button>
+    <ion-button expand="block" (click)="deleteFournisseur()">Supprimer</ion-button>
+  
+  </div>
+</ion-content>

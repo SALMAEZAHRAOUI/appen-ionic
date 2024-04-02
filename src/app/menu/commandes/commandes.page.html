@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Liste des commandes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list   style="flex-grow: 1;">
+    <ion-item *ngFor="let commande of commandes" (click)="navigateToMajCommande(commande.id)">
+      <ion-label>{{ commande.date }}</ion-label>
+      <ion-label>{{ commande.statutcomm }}</ion-label>
+      <ion-label>{{ commande.prixTotal }}</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+
+  <div *ngIf="!commandes || commandes.length === 0" style="flex-grow: 1; display: flex; justify-content: center; align-items: center;">
+    Aucune commande trouvé.
+  </div>
+
+  <ion-row style="padding: 16px;">
+    <ion-col>
+      <ion-button expand="block" fill="clear" routerLink="/ajoutercommandes">Ajouter commande</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>

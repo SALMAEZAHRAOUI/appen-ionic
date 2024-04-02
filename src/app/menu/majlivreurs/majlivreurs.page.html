@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mettre à jour les détails du livreur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Mettre à jour les détails du livreur</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-input type="text" name="name" [(ngModel)]="livreur.name" required placeholder="Nom du livreur">
+      <ion-icon name="person" slot="end"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="email" name="email" [(ngModel)]="livreur.email" required placeholder="Email du livreur">
+      <ion-icon name="mail" slot="end"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="tel" name="phone" [(ngModel)]="livreur.phone" required placeholder="Téléphone du livreur">
+      <ion-icon name="call" slot="start"></ion-icon>
+      <ion-icon name="chatbubbles" slot="end"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="updateLivreur()">Modifier</ion-button>
+  <ion-button expand="block" (click)="deleteLivreur()">Supprimer</ion-button>
+</ion-content>

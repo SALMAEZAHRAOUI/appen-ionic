@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Modifier une commande</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-select [(ngModel)]="order.clientId" aria-label={{ client.name }} placeholder="voir les information d'un client">
+
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="date" [(ngModel)]="order.date" placeholder="Sélectionnez une date"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" [(ngModel)]="order.prixTotal" placeholder="Montant total de la commande"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Statut de la commande</ion-label>
+    <ion-radio-group [(ngModel)]="order.statutcomm">
+      <ion-item>
+        <ion-radio value="En attente">En attente</ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-radio value="En cours de traitement">En cours de traitement</ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-radio value="Terminée">Terminée</ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-item>
+
+  <!-- Afficher et modifier les détails de la commande -->
+  <ion-item *ngFor="let detail of orderDetails">
+    <ion-label>{{ detail.productName }}</ion-label>
+    <ion-input type="number" [(ngModel)]="detail.quantity" placeholder="Quantité"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="updateOrder()">Enregistrer les modifications</ion-button>
+</ion-content>

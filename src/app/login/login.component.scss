@@ -1,0 +1,44 @@
+// home.page.scss et login.page.scss
+
+.registration-form-container,
+.login-form-container {
+  max-width: 410px;
+  margin: auto;
+  padding: 20px;
+  text-align: center; // Centrer le contenu
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+  white-space: normal; // Permettre le retour à la ligne
+}
+
+ion-button {
+  margin-top: 20px;
+}
+
+ion-input {
+  --padding-start: 8px; // Espacement à gauche de l'entrée
+  --padding-end: 8px; // Espacement à droite de l'entrée
+  --padding-top: 12px; // Espacement en haut de l'entrée
+  --padding-bottom: 12px; // Espacement en bas de l'entrée
+  border-radius: 8px; // Coins arrondis
+  border: 1px solid #ccc; // Bordure grise
+  background-color: #f9f9f9; // Couleur de fond légère
+  margin-top: 10px; // Espacement supplémentaire en haut
+}
+
+ion-item {
+  --background: transparent; // Fond transparent
+  --border-width: 0; // Pas de bordure
+  margin-bottom: 10px; // Espacement supplémentaire en bas
+}
+
+.message-link {
+  margin-top: 20px;
+  color: #007bff; // Couleur de lien bleu
+  text-decoration: none; // Pas de soulignement
+  display: block; // Afficher en bloc pour occuper toute la largeur disponible
+  text-align: center; // Centrer le texte
+}

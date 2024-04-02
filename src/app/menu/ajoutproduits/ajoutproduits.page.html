@@ -1,0 +1,27 @@
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Ajouter un produit</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <form #ajouterProduitForm="ngForm">
+      <ion-item>
+        <ion-input type="text" name="name" [(ngModel)]="nouveauProduit.name" required aria-label="Nom du produit" placeholder="Nom du produit"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="number" name="stock" [(ngModel)]="nouveauProduit.stock" required aria-label="Stock" placeholder="Stock"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input type="number" name="prix" [(ngModel)]="nouveauProduit.prix" required aria-label="Prix" placeholder="Prix"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button fill="outline" size="large" expand="full" >
+          <ion-icon name="images-outline"></ion-icon>
+        </ion-button>
+      </ion-item>
+     
+      <ion-button expand="block" (click)="ajouterProduit()">Ajouter</ion-button>
+    </form>
+  </ion-card-content>
+</ion-card>

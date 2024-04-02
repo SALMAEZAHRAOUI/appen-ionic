@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="registration-form-container">
+    <ion-item>
+      <ion-input placeholder="Nom d'utilisateur ou Adresse email" [(ngModel)]="username" type="text" required>
+        <ion-icon name="person" slot="start"></ion-icon> <!-- Icône pour le nom d'utilisateur ou l'adresse email -->
+      </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input placeholder="Mot de passe" [(ngModel)]="password" type="password" required>
+        <ion-icon name="lock-closed" slot="start"></ion-icon> <!-- Icône pour le mot de passe -->
+      </ion-input>
+    </ion-item>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    
+    <ion-button expand="block" (click)="login()">Se connecter</ion-button>
+    
+    <ion-button expand="block" fill="clear" (click)="navigateToRegistration()">Pas encore inscrit ? S'inscrire</ion-button>
+  </div>
+</ion-content>

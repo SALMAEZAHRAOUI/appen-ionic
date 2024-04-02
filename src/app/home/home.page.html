@@ -1,20 +1,39 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title>Inscription</ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-content>
+  <div class="registration-form-container">
+    <ion-item>
+      <ion-input placeholder="Nom d'utilisateur" [(ngModel)]="username" type="text" required>
+        <ion-icon name="person" slot="start"></ion-icon> <!-- Icône pour le nom d'utilisateur -->
+      </ion-input>
+    </ion-item>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <ion-item>
+      <ion-input placeholder="Adresse email" [(ngModel)]="email" type="email" required>
+        <ion-icon name="mail" slot="start"></ion-icon> <!-- Icône pour l'adresse email -->
+      </ion-input>
+    </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-item>
+      <ion-input placeholder="Mot de passe" [(ngModel)]="password" type="password" required>
+        <ion-icon name="lock-closed" slot="start"></ion-icon> <!-- Icône pour le mot de passe -->
+      </ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-input placeholder="Confirmation du mot de passe" [(ngModel)]="confirmPassword" type="password" required>
+        <ion-icon name="lock-closed" slot="start"></ion-icon> <!-- Icône pour la confirmation du mot de passe -->
+      </ion-input>
+    </ion-item>
+
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    
+    <ion-button expand="block" (click)="register()">S'inscrire</ion-button>
+    
+    <ion-button expand="block" fill="clear" (click)="navigateToLogin()">Vous avez déjà un compte ? Connectez-vous</ion-button>
+    
   </div>
 </ion-content>

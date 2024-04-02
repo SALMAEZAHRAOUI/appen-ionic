@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ajouter un client</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="form-container">
+    <ion-item>
+      <ion-icon slot="start" name="person"></ion-icon>
+      <ion-input type="text" name="name" [(ngModel)]="client.name" placeholder="Nom du client" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="location"></ion-icon>
+      <ion-input type="text" name="address" [(ngModel)]="client.address" placeholder="Adresse" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="mail"></ion-icon>
+      <ion-input type="email" name="email" [(ngModel)]="client.email" placeholder="Email" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-icon slot="start" name="call"></ion-icon>
+      <ion-input type="tel" name="phone" [(ngModel)]="client.phone" placeholder="Téléphone" required></ion-input>
+    </ion-item>
+
+    <ion-button expand="block" (click)="addClient()">Ajouter le client</ion-button>
+  </div>
+</ion-content>

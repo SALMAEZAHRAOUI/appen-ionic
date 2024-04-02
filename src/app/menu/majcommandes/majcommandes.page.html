@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Modifier une commande</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-select [(ngModel)]="order.clientId" (click)="showAllClients()" aria-label="Client" placeholder="Sélectionnez un client">
+      <ion-select-option *ngFor="let client of clients" [value]="client.id">{{ client.name }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  
+
+  <ion-item>
+    <ion-input type="date" [(ngModel)]="order.date">Date de la commande:</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" [(ngModel)]="deliveryAmount">Montant de la livraison:</ion-input>
+  </ion-item>
+
+  <ion-item *ngFor="let product of products">
+    <ion-input type="number" [(ngModel)]="product.quantity">{{ product.name }}</ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Statut de la commande: {{ order.status }}</ion-label>
+    <ion-select [(ngModel)]="order.status" label="">
+      <ion-select-option value="En attente">En attente</ion-select-option>
+      <ion-select-option value="En cours de traitement">En cours de traitement</ion-select-option>
+      <ion-select-option value="Terminée">Terminée</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-label>Montant total de la commande: {{ calculateTotal() }}</ion-label>
+
+  <ion-button expand="block" (click)="updateOrder()">Enregistrer les modifications</ion-button>
+  <ion-button expand="block" (click)="deleteOrder()">Supprimer la commande</ion-button>
+</ion-content>

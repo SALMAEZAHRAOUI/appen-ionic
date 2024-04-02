@@ -1,0 +1,46 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Ajouter une commande</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-select [(ngModel)]="selectedClient" aria-label="Client" placeholder="Sélectionnez un client">
+      <ion-select-option *ngFor="let client of clients" [value]="client.id">{{ client.name }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="date" [(ngModel)]="orderDate" placeholder="Sélectionnez une date">Date de la commande</ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input type="number" [(ngModel)]="deliveryAmount" placeholder="Montant de la livraison">Montant de la livraison</ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let product of products">
+      <ion-input type="number" [(ngModel)]="product.quantity"  placeholder="Quantité" min="0" [max]="product.stock"> {{ product.name }}</ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+    <ion-label>Statut de la commande</ion-label>
+    <ion-radio-group [(ngModel)]="selectedStatus">
+      <ion-item>
+        <ion-radio value="En attente">En attente</ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-radio value="En cours de traitement">En cours de traitement</ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-radio value="Terminée">Terminée</ion-radio>
+      </ion-item>
+    </ion-radio-group>
+  </ion-item>
+
+  <ion-label>Montant total de la commande: {{ calculateTotal() }}</ion-label>
+
+  <ion-button expand="block" (click)="addOrder()">Ajouter la commande</ion-button>
+</ion-content>

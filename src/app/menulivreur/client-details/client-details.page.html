@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>client-details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <!-- Bouton de retour en arrière -->
+      <ion-buttons slot="start">
+        <ion-back-button (click)="goBack()" icon="arrow-back"></ion-back-button>
+      </ion-buttons>
+
+      <!-- Titre de la page -->
+      <ion-title size="large">client-details</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+<ion-item>
+  <ion-input type="text" name="name" [(ngModel)]="client.name" required placeholder="Nom du client">
+    <ion-icon name="person" slot="end"></ion-icon>
+  </ion-input>
+</ion-item>
+<ion-item>
+  <ion-input type="text" name="address" [(ngModel)]="client.address" required placeholder="Adresse du client">
+    <ion-icon name="location" slot="end"></ion-icon>
+  </ion-input>
+</ion-item>
+<ion-item>
+  <ion-input type="email" name="email" [(ngModel)]="client.email" required placeholder="Email du client">
+    <ion-icon name="mail" slot="end"></ion-icon>
+  </ion-input>
+</ion-item>
+<ion-item>
+  <ion-input type="tel" name="phone" [(ngModel)]="client.phone" required placeholder="Téléphone du client">
+    <ion-icon name="call" slot="start"></ion-icon>
+    <ion-icon name="chatbubbles" slot="end"></ion-icon>
+  </ion-input>
+</ion-item>

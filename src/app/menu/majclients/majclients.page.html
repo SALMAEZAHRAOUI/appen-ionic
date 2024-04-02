@@ -1,0 +1,45 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>majclients</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">majclients</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-item>
+    <ion-input type="text" name="name" [(ngModel)]="client.name" required placeholder="Nom du client">
+      <ion-icon name="person" slot="end"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" name="address" [(ngModel)]="client.address" required placeholder="Adresse du client">
+      <ion-icon name="location" slot="end"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="email" name="email" [(ngModel)]="client.email" required placeholder="Email du client">
+      <ion-icon name="mail" slot="end"></ion-icon>
+    </ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input type="tel" name="phone" [(ngModel)]="client.phone" required placeholder="Téléphone du client">
+      <ion-icon name="call" slot="start"></ion-icon>
+      <ion-icon name="chatbubbles" slot="end"></ion-icon>
+    </ion-input>
+    <ion-buttons slot="end">
+      <ion-button (click)="openWhatsApp()">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-button>
+      <ion-button (click)="openWhatsAppBusiness()">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-item>
+  <ion-button expand="block" (click)="updateClient()">Modifier</ion-button>
+  <ion-button expand="block" (click)="deleteClient()">Supprimer</ion-button>
+</ion-content>

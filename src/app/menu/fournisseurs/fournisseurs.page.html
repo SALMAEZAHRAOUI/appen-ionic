@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>fournisseurs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngIf="fournisseurs && fournisseurs.length > 0">
+    <ion-item *ngFor="let fournisseur of fournisseurs" (click)="navigateToMajFournisseur(fournisseur.id)">
+      <ion-label>{{ fournisseur.name }}</ion-label>
+      <ion-icon slot="end" name="arrow-forward"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+  <div *ngIf="!fournisseurs || fournisseurs.length === 0" class="ion-text-center">
+    Aucun fournisseur trouvé.
+  </div>
+
+
+  <ion-row style="padding: 16px;">
+    <ion-col>
+      <ion-button expand="block" fill="clear" routerLink="/ajouterfournisseurs">Ajouter fournisseur</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-content>
